@@ -1,0 +1,10 @@
+// TO DO LIST
+Check Number of occupations against list of occupations!
+Change the probabilities of each job
+    Work on random occupation
+    definitely have a medic/engineer/researcher/journalist
+    the rest are trimmings
+Robot surnames
+    Mkii
+    v0.1
+    
