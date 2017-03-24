@@ -69,11 +69,17 @@ void Rocket::UpdateTourFlags(){
 }
 
 Module::m_function Rocket::WhichLab( ){
-    cout << "Input: " << bio_on_tour << geo_on_tour << phy_on_tour << endl;
+//     cout << "Input: " << bio_on_tour << geo_on_tour << phy_on_tour << endl;
     if(bio_on_tour){bio_on_tour=0; return Module::BIOLOGY_LAB;}
     if(geo_on_tour){geo_on_tour=0; return Module::GEOLOGY_LAB;}
     if(phy_on_tour){phy_on_tour=0; return Module::BIOLOGY_LAB;}
     return Module::CONSERVATORY; // No scientists
+}
+
+void Rocket::SetFunctionAndStatus( int i_mod_ut, Module::m_function i_m_function, bool i_status )
+{
+    modules_on_rocket[i_mod_ut].UpdateFunction(i_m_function);
+    modules_on_rocket[i_mod_ut].SetStatus(i_status);
 }
 
 void Rocket::AssignSensibleModuleFuncs( int i_no_modules )
@@ -91,15 +97,16 @@ void Rocket::AssignSensibleModuleFuncs( int i_no_modules )
     if(i_no_modules > -1){
         switch(i_no_modules){
             default             :
-            case max_prescribed : modules_on_rocket[8].UpdateFunction(Module::CONSERVATORY);
-            case 8              : modules_on_rocket[7].UpdateFunction(Module::DORMITORY);
-            case 7              : modules_on_rocket[6].UpdateFunction(WhichLab()); // Depends on the on scientists on tour
-            case 6              : modules_on_rocket[5].UpdateFunction(WhichLab());
-            case 5              : modules_on_rocket[4].UpdateFunction(Module::DORMITORY);
-            case 4              : modules_on_rocket[3].UpdateFunction(Module::KITCHEN);
-            case 3              : modules_on_rocket[2].UpdateFunction(Module::GARAGE);
-            case 2              : modules_on_rocket[1].UpdateFunction(Module::INFIRMARY);
-            case 1              : modules_on_rocket[0].UpdateFunction(Module::DORMITORY); break;
+            case max_prescribed : SetFunctionAndStatus(8,Module::CONSERVATORY,  false);
+            case 8              : SetFunctionAndStatus(7,Module::DORMITORY,     false);
+            case 7              : SetFunctionAndStatus(6,WhichLab(),            false);
+            case 6              : SetFunctionAndStatus(5,WhichLab(),            false);
+            case 5              : SetFunctionAndStatus(4,Module::DORMITORY,     false);
+            case 4              : SetFunctionAndStatus(3,Module::KITCHEN,       false);
+            case 3              : SetFunctionAndStatus(2,Module::GARAGE,        false);
+            case 2              : SetFunctionAndStatus(1,Module::INFIRMARY,     true);
+            case 1              : SetFunctionAndStatus(0,Module::DORMITORY,     true);
+                                  break;
             case 0              : cout << "No modules? Your adventurers are DOOMED!" << endl;
             exit(0);
         }

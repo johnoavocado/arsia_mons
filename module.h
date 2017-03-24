@@ -17,7 +17,7 @@ public:
             };
     
     Module()
-        :Equipment( s_mod_id++, "MOD_NAME_ASSIGNED", 200, false )
+        :Equipment( s_mod_id++, "MOD_NAME_ASSIGNED", 200+rand()%100, false )
     {
         module_function = SHELL;
     }; 

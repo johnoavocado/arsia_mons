@@ -16,6 +16,7 @@ class Rocket{
         void PrintModules();
         
         void AssignSensibleModuleFuncs(int);
+        void SetFunctionAndStatus( int, Module::m_function, bool );
         
         const Adventurer * getAdv(int i_mem) {return &adventurers_on_rocket[i_mem];};
         const Rover      * getRov(int i_mem) {return &rovers_on_rocket[i_mem];};
