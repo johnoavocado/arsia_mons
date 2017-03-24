@@ -1,6 +1,6 @@
 #include "glbl_settings.h"
 
-int Adventurer::adv_ovr = 1; // initialise the overall number of adventurers
+int Adventurer::s_adv_id = 1; // initialise the overall number of adventurers
 
 
 string Adventurer::GetName(void)  {
@@ -22,15 +22,19 @@ string Adventurer::GetGenderStr(void) {
 
 string Adventurer::GetOccupationStr(void) {
     switch(adv_occupation) {
-        case ENGINEER   : return "Engineer";
-        case MEDIC      : return "Medic";
-        case BIOLOGIST  : return "Biologist";
-        case GEOLOGIST  : return "Geologist";
-        case JOURNALIST : return "Journalist";
-        case CELEBRITY  : return "Celebrity";
-        case FARMER     : return "Farmer";
-        default         : return "Broken Occupation!";
+        case ENGINEER       : return "Engineer";
+        case MEDIC          : return "Medic";
+        case BIOLOGIST      : return "Biologist";
+        case GEOLOGIST      : return "Geologist";
+        case PHYSIOLOGIST   : return "Physiologist";
+        case JOURNALIST     : return "Journalist";
+        case CELEBRITY      : return "Celebrity";
+        default             : return "Broken Occupation!";
     }
+}
+
+Adventurer::occupation Adventurer::GetOccupation( ) {
+    return adv_occupation;
 }
 
 
@@ -212,8 +216,8 @@ int Adventurer::RandomProductivity( int i_age , Adventurer::gender i_gender ){
 Adventurer::Adventurer(void) {
     
     // Set all the variables
-    adv_id         = adv_ovr;
-    adv_ovr++; // Increment the overall number of adventureres
+    adv_id         = s_adv_id;
+    s_adv_id++; // Increment the overall number of adventureres
     adv_gender     = RandomGender( ALLOW_ROBOTS );
     adv_fstname    = RandomFstname();
     adv_surname    = RandomSurname();

@@ -91,11 +91,14 @@ int Game::Phase_Rocket(){
     tmbldr.Finalise(); // Moves selected adventurers to rocket
     
     rocket.Embark(tmbldr);
+    rocket.UpdateTourFlags();
+    rocket.AssignSensibleModuleFuncs(NO_OF_MODULES);
+    rocket.Journey(INCL_STORY);
     
-    rocket.Journey(true);
+    mission.Disembark(rocket, GAME_DEBUG);
     
-    mission.Disembark(rocket);
-    
+    mission.PrintModules();
+        
     return 0;
 }
     

@@ -7,7 +7,14 @@ public:
 	Mission(); // constuctor
 	Mission(int, int, int, int, int, int); // Parameterised constructor
 	
-	void Disembark( Rocket );
+	void Disembark( Rocket , bool );
+	
+	void PrintModules();
+	
+	const Adventurer * getAdv(int i_mem) {return &adventurers_on_mars[i_mem];};
+    const Rover      * getRov(int i_mem) {return &rovers_on_mars[i_mem];};
+    const Suit       * getSut(int i_mem) {return &suits_on_mars[i_mem];};
+    const Module     * getMod(int i_mem) {return &modules_on_mars[i_mem];};
 	
 private:
     int l_oxygen_max;

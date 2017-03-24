@@ -1,5 +1,6 @@
 // TO DO LIST
 Check Number of occupations against list of occupations!
+    And m_functions!
 Change the probabilities of each job
     Work on random occupation
     definitely have a medic/engineer/researcher/journalist
@@ -7,4 +8,6 @@ Change the probabilities of each job
 Robot surnames
     Mkii
     v0.1
-    
+Fix WhichLabs()
+    static for how many labs there are
+    No need to set beyond max_prescribed. SHELL is fine. Leave it up to the ENGINEERs.

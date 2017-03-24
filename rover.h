@@ -6,6 +6,8 @@ class Rover : private Equipment{
 public:
     Rover(); // Cons
 
+
+
 };
 
 #endif //__rover_h__

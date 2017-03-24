@@ -5,13 +5,25 @@ class Equipment{
 
 public:
 	Equipment();
-	Equipment( int );
+	Equipment( int, string, int, bool );
 	
-	int GetHealth(bool);
+	const void PrintID(  );
+	
+	int     GetID();
+	int     GetHealth(bool);
+	string  GetName();
+	string  GetStatus();
+	
+	void    SetName(string);
+	void    SetStatus(bool);
+	
 	
 private:
-    int health;
-    int health_max;
+    int     equipment_id;
+    int     health;
+    int     health_max;
+    string  equipment_name;
+    bool    status;
 
 };
 

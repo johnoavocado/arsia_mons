@@ -6,7 +6,6 @@
 #include <string>
 
 #define MAX_AGE_LESS_18  52
-#define ADVENTURER_DEBUG false
 
 
 class Adventurer{
@@ -23,26 +22,27 @@ class Adventurer{
                 MEDIC,
                 BIOLOGIST,
                 GEOLOGIST,
+                PHYSIOLOGIST,
                 JOURNALIST,
-                CELEBRITY,
-                FARMER
+                CELEBRITY
             };
             
             // Properties	
             bool            selected;
-            static int      adv_ovr;
             
             // Methods
             std::string     GetName();
             int             GetAge();
             std::string     GetGenderStr();
             std::string     GetOccupationStr();
+            enum occupation GetOccupation();
             void            PrintID(bool);
             void            PrintStats();
             Adventurer(); // Constructor
 
     private:
             // Properties
+            static int      s_adv_id;
             int             adv_id;
             std::string     adv_fstname;
             std::string     adv_surname;
