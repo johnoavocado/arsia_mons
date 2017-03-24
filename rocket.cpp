@@ -70,9 +70,9 @@ void Rocket::UpdateTourFlags(){
 
 Module::m_function Rocket::WhichLab( ){
     cout << "Input: " << bio_on_tour << geo_on_tour << phy_on_tour << endl;
-    if(bio_on_tour){bio_on_tour--; return Module::BIOLOGY_LAB;}
-    if(geo_on_tour){geo_on_tour--; return Module::GEOLOGY_LAB;}
-    if(phy_on_tour){phy_on_tour--; return Module::BIOLOGY_LAB;}
+    if(bio_on_tour){bio_on_tour=0; return Module::BIOLOGY_LAB;}
+    if(geo_on_tour){geo_on_tour=0; return Module::GEOLOGY_LAB;}
+    if(phy_on_tour){phy_on_tour=0; return Module::BIOLOGY_LAB;}
     return Module::CONSERVATORY; // No scientists
 }
 
