@@ -1,7 +1,7 @@
 #ifndef __suit_h__
 #define __suit_h__
 
-class Suit{
+class Suit : public Equipment{
 
 public:
     Suit(); // Cons

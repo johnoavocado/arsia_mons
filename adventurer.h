@@ -27,6 +27,25 @@ class Adventurer{
                 CELEBRITY
             };
             
+            enum e_activity {
+                MODULE_ENHC,
+                MODULE_REPAIR,
+                EQUIP_ENHC,
+                EQUIP_REPAIR,
+                SYSTEM_ENHC,
+                SYSTEM_REPAIR,
+                EXPLORE,
+                COOK,
+                DOCUMENT,
+                RELAX
+            };
+            
+            struct s_Activity {
+                string      act_name;
+                bool        act_available;
+            };
+            
+            
             // Properties	
             bool            selected;
             
@@ -38,6 +57,7 @@ class Adventurer{
             enum occupation GetOccupation();
             void            PrintID(bool);
             void            PrintStats();
+            void            PrintAvailActivities();
             Adventurer(); // Constructor
 
     private:
@@ -56,6 +76,8 @@ class Adventurer{
             int             max_sanity;      
             int             productivity;
             int             max_productivity;
+            s_Activity      curr_activity;
+            s_Activity      avail_activities[NO_OF_ACTIVITIES];
             
             // Methods
             enum gender     RandomGender( bool );

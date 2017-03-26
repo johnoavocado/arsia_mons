@@ -12,16 +12,18 @@
     #define SIZE_OF_ROCKET           5 // In terms of adventurers
     #define NO_OF_ROVERS             3
     #define NO_OF_SUITS              8
-    #define NO_OF_MODULES            10
+    #define NO_OF_MODULES           10
 
     #define NUMBER_OF_OCCUPATIONS    7 // Update this if list of occupations changes... jeasus
-    #define NUMBER_OF_MOD_FUNC       8 // Update this if list of occupations changes... jeasus
+    #define NO_OF_ACTIVITIES        10 
+    #define NUMBER_OF_MOD_FUNC       8 // Update this if list of module functions changes
     #define ALLOW_ROBOTS             false
 
     #define ADVENTURER_DEBUG         false
     #define TEAMBUILDER_DEBUG        true
     #define ROCKET_DEBUG             false
     #define GAME_DEBUG               false
+    #define SINGLE_ROUND_DEBUG       true
     
     #define INCL_STORY               false
 

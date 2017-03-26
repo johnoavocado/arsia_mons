@@ -61,12 +61,12 @@ int Game::RunGamestate () {
 }
 
 Game::Game() {
-    debug_mode = GAME_DEBUG;
-    curr_gamestate = Game::gamestate(0);    
-    next_gamestate = Game::gamestate(1);    
+    debug_mode          = GAME_DEBUG;
+    curr_gamestate      = Game::gamestate(0);    
+    next_gamestate      = Game::gamestate(1);    
     cash                = 0;
     dead_adventurers    = 0;
-    end_game            = true;
+    end_game            = SINGLE_ROUND_DEBUG;
     quit_game           = false;
 }
 
@@ -95,9 +95,8 @@ int Game::Phase_Rocket(){
     rocket.AssignSensibleModuleFuncs(NO_OF_MODULES);
     rocket.Journey(INCL_STORY);
     
-    mission.Disembark(rocket, GAME_DEBUG);
-    
-    mission.PrintModules();
+    mission.Setup(5000, 500, 1000, 10000, 0, 0);
+    mission.Disembark(rocket, ROCKET_DEBUG);
         
     return 0;
 }

@@ -65,6 +65,17 @@ void Adventurer::PrintStats() {
     cout << "-----------------------------------" << endl;
 }
 
+void Adventurer::PrintAvailActivities() {
+    cout << "-----------------------------------" << endl;
+    
+    for(int j = 0; j<NO_OF_ACTIVITIES; j++){
+        if(avail_activities[j].act_available){
+            cout << avail_activities[j].act_name << endl;
+        }
+    }
+    cout << "-----------------------------------" << endl;
+}
+
 Adventurer::gender Adventurer::RandomGender( bool allow_robots = false) {
     
     int maxopts = allow_robots ? 3 : 2;
@@ -234,7 +245,17 @@ Adventurer::Adventurer(void) {
     max_health          = health;
     max_sanity          = sanity;
     max_productivity    = productivity;
-    
+     
+    avail_activities[0].act_name = "MODULE_ENHC";   avail_activities[0].act_available = true;
+    avail_activities[1].act_name = "MODULE_REPAIR"; avail_activities[1].act_available = false; // Only when there is a damaged module
+    avail_activities[2].act_name = "EQUIP_ENHC";    avail_activities[2].act_available = true;
+    avail_activities[3].act_name = "EQUIP_REPAIR";  avail_activities[3].act_available = false; // Only when there is a damaged suit/rover
+    avail_activities[4].act_name = "SYSTEM_ENHC";   avail_activities[4].act_available = true;
+    avail_activities[5].act_name = "SYSTEM_REPAIR"; avail_activities[5].act_available = false; // Only when there is a damaged system
+    avail_activities[6].act_name = "EXPLORE";       avail_activities[6].act_available = true;
+    avail_activities[7].act_name = "COOK";          avail_activities[7].act_available = false; // Only when there is a kitchen
+    avail_activities[8].act_name = "DOCUMENT";      avail_activities[8].act_available = true;
+    avail_activities[9].act_name = "RELAX";         avail_activities[9].act_available = true;
     
 //     cout << "You just created an adventurer named : " << GetName() << endl;
     
