@@ -23,10 +23,28 @@
     #define TEAMBUILDER_DEBUG        true
     #define ROCKET_DEBUG             false
     #define GAME_DEBUG               false
-    #define SINGLE_ROUND_DEBUG       true
+    #define SINGLE_ROUND_DEBUG       false
     
     #define INCL_STORY               false
 
+    // Define Realism here
+    #define NORMAL_BREATHING        550
+    #define HEAVY_BREATHING         800
+    #define MODULE_ENERGY_REQ       7
+    #define NORMAL_WATER_USAGE      20 
+    #define HEAVY_WATER_USAGE       40
+    #define NORMAL_EATING           3
+    #define HEAVY_EATING            10
+    
+    // Starting values
+    #define START_OXYGEN            500
+    #define START_ENERGY            500000
+    #define START_FOOD              1000
+    #define START_WATER             20000
+    #define START_MONEY             10000
+    #define START_MODULES           0 // Not used
+    #define START_SUITS             0 // Not used
+        
     #include "adventurer.h"
     #include "equipment.h"
     #include "rover.h"

@@ -12,7 +12,8 @@ public:
 	int     GetID();
 	int     GetHealth(bool);
 	string  GetName();
-	string  GetStatus();
+	bool    GetStatus();
+	string  GetStatusStr();
 	
 	void    SetName(string);
 	void    SetStatus(bool);

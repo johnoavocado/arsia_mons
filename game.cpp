@@ -95,19 +95,26 @@ int Game::Phase_Rocket(){
     rocket.AssignSensibleModuleFuncs(NO_OF_MODULES);
     rocket.Journey(INCL_STORY);
     
-    mission.Setup(5000, 500, 1000, 10000, 0, 0);
+    mission.Setup( START_OXYGEN, START_ENERGY, START_FOOD, START_WATER, START_MONEY, START_MODULES, START_SUITS);
     mission.Disembark(rocket, ROCKET_DEBUG);
-        
+    mission.PrintMissionStatus();
     return 0;
 }
     
 int Game::Phase_SimWeek(){
     if(debug_mode) cout << "Phase_SimWeek" << endl;
+    
+    mission.SimWeek();
+    
     return 0;
 }
     
 int Game::Phase_RvwWeek(){
     if(debug_mode) cout << "Phase_RvwWeek" << endl;
+    
+        if( !mission.ReviewWeek() ) quit_game = true;
+        
+        
     return 0;
 }
 

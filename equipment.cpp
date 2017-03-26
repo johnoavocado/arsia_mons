@@ -29,7 +29,9 @@ int Equipment::GetHealth( bool i_ret_max = false )
 
 string Equipment::GetName(){return equipment_name;}
 
-string Equipment::GetStatus()
+bool Equipment::GetStatus(){ return status; }
+
+string Equipment::GetStatusStr()
 {
     if(status){
         return "ONLINE";
@@ -46,10 +48,10 @@ const void Equipment::PrintID( )
 {
     
     cout << "-----------------------------------" << endl;
-    cout << " ID: \t\t"   <<     GetID()          << endl;
-    cout << " Name:\t\t"  <<   GetName()          << endl;
-    cout << " Health:\t"  << GetHealth()          << endl;
-    cout << " Status:\t"  << GetStatus()          << endl;
+    cout << " ID: \t\t"   <<        GetID()       << endl;
+    cout << " Name:\t\t"  <<      GetName()       << endl;
+    cout << " Health:\t"  <<    GetHealth()       << endl;
+    cout << " Status:\t"  << GetStatusStr()       << endl;
     cout << "-----------------------------------" << endl;
 
 }

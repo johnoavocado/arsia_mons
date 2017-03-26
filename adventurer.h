@@ -55,6 +55,8 @@ class Adventurer{
             std::string     GetGenderStr();
             std::string     GetOccupationStr();
             enum occupation GetOccupation();
+            bool            GetAlive();
+            
             void            PrintID(bool);
             void            PrintStats();
             void            PrintAvailActivities();

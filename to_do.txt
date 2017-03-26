@@ -13,3 +13,6 @@ Fix WhichLabs()
     No need to set beyond max_prescribed. SHELL is fine. Leave it up to the ENGINEERs.
 Individual stats for each adventurer
     Cooking, exploring, bravery, etc...
+Replace SIZE_OF_ROCKET in Mission to support future rockets!
+Add specific materials
+    Medicine, building material, rocks, samples

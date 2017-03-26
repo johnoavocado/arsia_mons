@@ -39,7 +39,7 @@ void Rocket::Journey( bool i_long = false )
         cout << "Your team of lemmings travels to Mars" << endl;
         cout << "They enter their cryogenic sleep in the facility on Earth" << endl;
         wait_for_user();
-        cout << "Tah dah! They wake up after landing on Mars" << endl;
+        cout << "Twh dwh! They wake up after landing on Mars" << endl;
         wait_for_user();
     }else{
         cout << "This is the short version of the story" << endl;

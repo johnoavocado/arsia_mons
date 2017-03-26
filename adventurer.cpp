@@ -33,9 +33,9 @@ string Adventurer::GetOccupationStr(void) {
     }
 }
 
-Adventurer::occupation Adventurer::GetOccupation( ) {
-    return adv_occupation;
-}
+Adventurer::occupation Adventurer::GetOccupation( ) { return adv_occupation; }
+
+bool Adventurer::GetAlive() { return alive; }
 
 
 void Adventurer::PrintID(bool print_in_team = false) {

@@ -5,12 +5,15 @@ class Mission{
 
 public:
 	Mission(); // constuctor
-	void Setup(int, int, int, int, int, int); // Parameterised
+	void Setup(int, int, int, int, int, int, int); // Parameterised
 	
 	void Disembark( Rocket , bool );
 	
+	void PrintMissionStatus();
+	
 	void PrintModules();
 	void PrintRovers();
+	void PrintSuits();
 	
 	const Adventurer * getAdv(int i_mem) {return &adventurers_on_mars[i_mem];};
     const Rover      * getRov(int i_mem) {return &rovers_on_mars[i_mem];};
@@ -19,7 +22,12 @@ public:
 	
 	void SimWeek();
 	void SimDay();
-	void ReviewWeek();
+	bool ReviewWeek();
+	
+	int OxygenConsumption();
+	int EnergyConsumption();
+	int WaterConsumption();
+	int FoodConsumption();
 	
 	void SetOxygen( int );
 	void SetOxygenMax( int );
@@ -29,7 +37,12 @@ public:
 	void SetWaterMax( int );
 	void SetMoney(int);
 	
+	int GetAdventurersAlive();
+	int GetModulesOnline();
+	
 private:
+    int kwh_energy;
+    int kwh_energy_max;
     int l_oxygen_max;
     int l_oxygen;
     int kg_food_max;
@@ -37,6 +50,9 @@ private:
     int l_water_max;
     int l_water;
     int money;
+    
+    int adventurers_alive;
+    int modules_online;
     
     // !! This needs to be changed
     // There will be multiple deliveries of adv and equipment as the game goes on
